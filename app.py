@@ -7,15 +7,12 @@ def main():
     while True:
         user_input = input(">> ")
 
-        print("🛰️  Query received. Stand by...\n")
-        response = chat_with_nova(user_input)
-        print("NOVA:", response)
-        print("\n------------------------------------\n")
-
         # 🛑 Handle exit before calling the model
         if user_input.strip().lower() in ["exit", "quit"]:
-            print("👋 Shutting down NOVA. Stay safe out there, astronaut.")
+            print("👋 Shutting down NOVA. Stay safe out there.")
             break
+
+        print("🛰️  Query received. Stand by...\n")
 
         try:
             response = chat_with_nova(user_input)

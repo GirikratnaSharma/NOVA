@@ -37,5 +37,12 @@ class Retriever:
 
     def retrieve(self, query, top_k=1):
         query_vec = self.model.encode([query])
-        _, indices = self.index.search(query_vec, top_k)
-        return [self.text_chunks[i] for i in indices[0]]
+        distances, indices = self.index.search(query_vec, top_k)
+
+        valid_indices = [i for i in indices[0] if i >= 0 and i < len(self.text_chunks)]
+
+        if not valid_indices:
+            return ["Sorry, I couldn’t find anything relevant in the documents."]
+
+        return [self.text_chunks[i] for i in valid_indices]
+

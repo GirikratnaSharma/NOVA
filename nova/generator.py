@@ -21,5 +21,6 @@ Question: {query}
         raw_output = result[0]['generated_text']
 
         # Clean out anything weird after the answer
-        cleaned = raw_output.split("Question:")[0].strip()
+        cleaned = raw_output.split("Question:")[0].strip().split("\n")[0].strip()
+
         return cleaned
