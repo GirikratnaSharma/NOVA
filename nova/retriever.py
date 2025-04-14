@@ -22,7 +22,7 @@ class Retriever:
 
     def index_documents(self):
         self.text_chunks = load_documents_from_folder(self.docs_dir)
-        embeddings = self.model.encode(self.text_chunks)
+        embeddings = self.model.encode(self.text_chunks, normalize_embeddings=True)
         self.index.add(embeddings)
 
     def save_index(self):
@@ -36,13 +36,15 @@ class Retriever:
             self.text_chunks = pickle.load(f)
 
     def retrieve(self, query, top_k=1):
-        query_vec = self.model.encode([query])
+        query_vec = self.model.encode([query], normalize_embeddings=True)
         distances, indices = self.index.search(query_vec, top_k)
 
-        valid_indices = [i for i in indices[0] if i >= 0 and i < len(self.text_chunks)]
+        valid_indices = [i for i in indices[0] if 0 <= i < len(self.text_chunks)]
 
         if not valid_indices:
             return ["Sorry, I couldn’t find anything relevant in the documents."]
 
-        return [self.text_chunks[i] for i in valid_indices]
+        # Debug: print the matched document chunk
+        print("Top Match Retrieved:\n", self.text_chunks[valid_indices[0]], "\n")
 
+        return [self.text_chunks[i] for i in valid_indices]
