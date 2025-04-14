@@ -1,5 +1,3 @@
-# app.py
-
 from nova.assistant import chat_with_nova
 
 def main():
@@ -8,7 +6,9 @@ def main():
 
     while True:
         user_input = input(">> ")
-        if user_input.lower() in ["exit", "quit"]:
+
+        # 🛑 Handle exit before calling the model
+        if user_input.strip().lower() in ["exit", "quit"]:
             print("👋 Shutting down NOVA. Stay safe out there, astronaut.")
             break
 
