@@ -1,0 +1,4 @@
+To reboot the oxygen subsystem:
+1. Open the control panel.
+2. Flip the red switch.
+3. Wait 60 seconds for reset to complete.
