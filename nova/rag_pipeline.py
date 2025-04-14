@@ -8,7 +8,7 @@ class RAGPipeline:
         self.retriever.index_documents()
 
     def run(self, query):
-        docs = self.retriever.retrieve(query, top_k=2)
+        docs = self.retriever.retrieve(query, top_k=3)
         context = "\n".join(docs)
 
         # Fallback if no useful docs retrieved
