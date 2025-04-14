@@ -1,28 +1,25 @@
-# nova/generator.py
 from transformers import pipeline
 
 class Generator:
     def __init__(self):
-        self.generator = pipeline("text-generation", model="gpt2")
+        self.generator = pipeline("text2text-generation", model="google/flan-t5-base")
 
     def generate_response(self, context, query):
-        prompt = f"Context: {context}\n\nQuestion: {query}\nAnswer:"
+        prompt = f"""You are NOVA, a spaceflight assistant AI. 
+Use the context below to answer the astronaut's question.
+
+Context: {context}
+
+Question: {query}
+"""
         result = self.generator(
             prompt,
-            max_length=200,  # 🔥 Increase token budget
-            do_sample=True,
-            top_k=50,
-            top_p=0.92,
-            temperature=0.7,
-            truncation=True,
-            pad_token_id=50256  # GPT-2 end-of-sequence token
+            max_length=150,
+            truncation=True
         )
 
-        # Extract clean answer
-        generated = result[0]['generated_text']
-        answer = generated.split("Answer:")[-1].strip()
+        raw_output = result[0]['generated_text']
 
-        # Optional: prevent overflow into hallucinated follow-ups
-        cleaned = answer.split("Question:")[0].strip()
-
+        # Clean out anything weird after the answer
+        cleaned = raw_output.split("Question:")[0].strip()
         return cleaned
