@@ -1,26 +1,39 @@
-# nova/retriever.py
 from sentence_transformers import SentenceTransformer
 import faiss
 import os
+import pickle
+from utils.parser import load_documents_from_folder
 
 class Retriever:
-    def __init__(self, docs_dir="data/"):
+    def __init__(self, docs_dir="data/", index_path="embeddings/faiss.index"):
         self.model = SentenceTransformer("all-MiniLM-L6-v2")
         self.docs_dir = docs_dir
+        self.index_path = index_path
         self.index = faiss.IndexFlatL2(384)
         self.text_chunks = []
-        self.embeddings = []
 
-    def load_documents(self):
-        for filename in os.listdir(self.docs_dir):
-            with open(os.path.join(self.docs_dir, filename), "r", encoding="utf-8") as f:
-                text = f.read()
-                self.text_chunks.append(text)
+        if os.path.exists(self.index_path):
+            print("🔁 Loading existing FAISS index...")
+            self.load_index()
+        else:
+            print("🧠 Indexing documents for the first time...")
+            self.index_documents()
+            self.save_index()
 
     def index_documents(self):
-        self.load_documents()
-        self.embeddings = self.model.encode(self.text_chunks)
-        self.index.add(self.embeddings)
+        self.text_chunks = load_documents_from_folder(self.docs_dir)
+        embeddings = self.model.encode(self.text_chunks)
+        self.index.add(embeddings)
+
+    def save_index(self):
+        faiss.write_index(self.index, self.index_path)
+        with open("embeddings/text_chunks.pkl", "wb") as f:
+            pickle.dump(self.text_chunks, f)
+
+    def load_index(self):
+        self.index = faiss.read_index(self.index_path)
+        with open("embeddings/text_chunks.pkl", "rb") as f:
+            self.text_chunks = pickle.load(f)
 
     def retrieve(self, query, top_k=1):
         query_vec = self.model.encode([query])
