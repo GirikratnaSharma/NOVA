@@ -27,6 +27,7 @@ Think of it as **HAL 9000** meets **ChatGPT**, minus the existential threat.
 
 ## 📁 Folder Structure
 
+```plaintext
 nova/
 ├── data/                  # Mission documents (e.g., NASA PDFs, checklists)
 ├── embeddings/            # Vector index (FAISS or Chroma)
@@ -39,6 +40,7 @@ nova/
 ├── app.py                 # CLI entry point
 ├── LICENSE                # MIT License
 └── README.md              # Project readme
+
 
 
 ## 🚀 Getting Started
