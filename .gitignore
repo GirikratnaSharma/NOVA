@@ -1,0 +1,18 @@
+# Virtual environment
+venv/
+
+# FAISS index & document cache
+embeddings/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter notebooks checkpoints (if you ever use them)
+.ipynb_checkpoints/
+
+# macOS hidden file
+.DS_Store
+
+# Log files
+*.log
