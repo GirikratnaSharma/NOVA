@@ -41,6 +41,7 @@ nova/
 ├── LICENSE                # MIT License
 └── README.md              # Project readme
 
+```
 
 
 ## 🚀 Getting Started
