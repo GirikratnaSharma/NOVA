@@ -13,7 +13,7 @@ def load_pdf_file(filepath):
             text += page.get_text()
     return text
 
-def chunk_text(text, chunk_size=2):
+def chunk_text(text, chunk_size=5):
     # Basic sentence splitting using punctuation
     sentences = re.split(r'(?<=[.!?])\s+', text.strip())
     chunks = [" ".join(sentences[i:i+chunk_size]) for i in range(0, len(sentences), chunk_size)]

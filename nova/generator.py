@@ -1,4 +1,5 @@
 from transformers import pipeline
+import re
 
 class Generator:
     def __init__(self):
@@ -18,9 +19,13 @@ Question: {query}
             truncation=True
         )
 
-        raw_output = result[0]['generated_text']
+        raw_output = result[0]['generated_text'].strip()
 
-        # Clean out anything weird after the answer
-        cleaned = raw_output.split("Question:")[0].strip().split("\n")[0].strip()
+        # Remove weird artifacts like repeated prompts or broken steps
+        cleaned = raw_output.split("Question:")[0].strip()
+
+        # Remove hanging "number + dot" endings like "3."
+        if re.search(r"\b\d+\.$", cleaned):
+            cleaned = re.sub(r"\b\d+\.$", "", cleaned).strip()
 
         return cleaned
