@@ -8,7 +8,7 @@ embeddings/
 __pycache__/
 *.py[cod]
 
-# Jupyter notebooks checkpoints (if you ever use them)
+# Jupyter notebooks checkpoints
 .ipynb_checkpoints/
 
 # macOS hidden file
