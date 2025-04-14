@@ -12,7 +12,7 @@ def main():
             print("Shutting down NOVA. Stay safe out there.")
             break
 
-        print("🛰️  Query received. Stand by...\n")
+        print("Query received. Stand by...\n")
 
         try:
             response = chat_with_nova(user_input)
