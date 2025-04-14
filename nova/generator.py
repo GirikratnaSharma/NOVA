@@ -7,5 +7,6 @@ class Generator:
 
     def generate_response(self, context, query):
         prompt = f"Context: {context}\n\nQuestion: {query}\nAnswer:"
-        result = self.generator(prompt, max_length=100, do_sample=True)
+        result = self.generator(prompt, max_length=100, do_sample=True, truncation=True)
+
         return result[0]['generated_text'].split("Answer:")[-1].strip()
