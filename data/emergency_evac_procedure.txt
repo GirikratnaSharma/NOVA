@@ -1,0 +1,5 @@
+In case of emergency evacuation:
+1. Proceed to the nearest escape pod.
+2. Secure your harness and press the "ARM POD" button.
+3. Wait for cabin depressurization to complete.
+4. Hit the large blue "EJECT" button to initiate launch sequence.

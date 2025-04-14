@@ -1,0 +1,4 @@
+In the event of a power failure:
+1. Switch to auxiliary power by flipping the yellow toggle near the main console.
+2. Confirm power reroute on the diagnostics screen.
+3. If auxiliary fails, initiate manual override using the battery module located in Bay 3.

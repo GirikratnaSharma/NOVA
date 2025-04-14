@@ -1,0 +1,5 @@
+To establish contact with mission control:
+1. Activate the comms relay panel.
+2. Set the frequency to 145.800 MHz.
+3. Press and hold the TRANSMIT button for 3 seconds.
+4. Wait for confirmation tone before speaking.
