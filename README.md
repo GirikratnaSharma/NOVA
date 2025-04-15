@@ -1,10 +1,10 @@
-# 🚀 NOVA — Neural Operator for Virtual Assistance
+# NOVA — Neural Operator for Virtual Assistance
 
 > An intelligent mission support system powered by Retrieval-Augmented Generation (RAG) and Transformer-based language models.
 
 ---
 
-## 🌌 Project Overview
+## Project Overview
 
 **NOVA** (Neural Operator for Virtual Assistance) is a next-gen software AI assistant designed to simulate decision-making and procedural support for spaceflight environments.
 
@@ -14,18 +14,17 @@ Think of it as **HAL 9000** meets **ChatGPT**, minus the existential threat.
 
 ---
 
-## 🧠 Features
+## Features
 
-- 🔍 **Retrieval-Augmented Generation (RAG)** pipeline
+- 🔍 **RAG** pipeline
 - 📚 Answers grounded in real mission documents (e.g., EVA checklists, system protocols)
 - 🤖 Hugging Face Transformers integration
 - 💬 Natural language query support for mission-critical situations
 - 🧪 Simulated space ops use-cases (life support, system reboot, diagnostics)
-- ⚡ Lightweight CLI interface *(GUI coming soon)*
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```plaintext
 nova/
@@ -44,7 +43,7 @@ nova/
 ```
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repo
 ```bash
