@@ -10,17 +10,17 @@
 
 Built using modern NLP techniques — including transformer models from Hugging Face and document retrieval via FAISS — NOVA allows users to query space mission procedures, logs, and protocols in natural language.
 
-Think of it as **HAL 9000** meets **ChatGPT**, minus the existential threat.
+Think of it as **HAL 9000**, minus the existential threat.
 
 ---
 
 ## Features
 
-- 🔍 **RAG** pipeline
-- 📚 Answers grounded in real mission documents (e.g., EVA checklists, system protocols)
-- 🤖 Hugging Face Transformers integration
-- 💬 Natural language query support for mission-critical situations
-- 🧪 Simulated space ops use-cases (life support, system reboot, diagnostics)
+- **RAG** pipeline
+- Answers grounded in real mission documents (e.g., EVA checklists, system protocols)
+- Hugging Face Transformers integration
+- Natural language query support for mission-critical situations
+- Simulated space ops use-cases (life support, system reboot, diagnostics)
 
 ---
 
