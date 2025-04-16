@@ -47,15 +47,12 @@ class Generator:
                 messages=self.conversation
             )["choices"][0]["message"]["content"].strip()
 
-        # Ensure there's a newline at the start
-        formatted_output = "\n" + raw_output.strip()
-
-        response = {"role": "assistant", "content": formatted_output}
+        response = {"role": "assistant", "content": raw_output}
         self.conversation.append(response)
 
-        # Clean artifacts (optional still)
-        cleaned = formatted_output.split("Question:")[0].strip()
+        # Clean artifacts
+        cleaned = raw_output.split("Question:")[0].strip()
         if re.search(r"\b\d+\.$", cleaned):
             cleaned = re.sub(r"\b\d+\.$", "", cleaned).strip()
 
-        return formatted_output
+        return raw_output

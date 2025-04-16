@@ -10,13 +10,14 @@ def main():
             user_input = input(">> ")
 
             if user_input.strip().lower() in ["exit", "quit"]:
-                print("Shutting down NOVA. Stay safe out there.")
+                print("\nShutting down NOVA. Stay safe out there.")
                 break
 
             print("Query received. Stand by...\n")
             sys.stdout.flush()
 
             response = chat_with_nova(user_input)
+            print()
             print(f"NOVA: {response}\n")
 
         except Exception as e:
