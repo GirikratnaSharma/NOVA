@@ -8,12 +8,12 @@ class RAGPipeline:
         self.retriever.index_documents()
 
     def run(self, query):
-        docs = self.retriever.retrieve(query, top_k=3)
-        context = "\n".join(docs)
+        docs = self.retriever.retrieve(query, top_k=5)
 
-        # Fallback if no useful docs retrieved
-        if "couldn’t find anything relevant" in docs[0]:
-            print("No match found in documents. Falling back to general generation.\n")
+        # Handle fallback if no relevant doc was found
+        if docs and isinstance(docs, list) and "couldn’t find anything relevant" in docs[0]:
+            print("No match found in documents. Falling back to general generation.")
             return self.generator.generate_response("", query)
 
+        context = "\n".join(docs)
         return self.generator.generate_response(context, query)

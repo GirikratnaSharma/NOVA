@@ -1,7 +1,24 @@
-transformers>=4.36.0
+# Local GGUF-based LLM engine
+llama-cpp-python>=0.2.11
+
+# Hugging Face + Transformers (for tokenizer support, if needed)
+transformers>=4.39.0
+safetensors>=0.4.0
+
+# Embedding + Retrieval
 sentence-transformers>=2.2.2
 faiss-cpu>=1.7.4
-torch>=1.13.0
-numpy>=1.23.0
 scikit-learn>=1.3.0
+
+# Core math + ML utils
+numpy>=1.23.0
+
+# Inference engine
+torch>=2.1.0
+accelerate>=0.21.0
+
+# PDF parsing
+PyMuPDF>=1.22.0
+
+# Optional config loading (if you use .env files later)
 python-dotenv>=1.0.0

@@ -40,11 +40,8 @@ class Retriever:
         distances, indices = self.index.search(query_vec, top_k)
 
         valid_indices = [i for i in indices[0] if 0 <= i < len(self.text_chunks)]
-
         if not valid_indices:
             return ["Sorry, I couldn’t find anything relevant in the documents."]
 
-        # Debug: print the matched document chunk
-        print("Top Match Retrieved:\n", self.text_chunks[valid_indices[0]], "\n")
-
+        # print("Top Match Retrieved:", self.text_chunks[valid_indices[0]])  # debug
         return [self.text_chunks[i] for i in valid_indices]
