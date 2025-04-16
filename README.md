@@ -1,6 +1,6 @@
 # NOVA — Neural Operator for Virtual Assistance
 
-> An intelligent mission support system powered by Retrieval-Augmented Generation (RAG) and Transformer-based language models.
+> An intelligent mission support system powered by RAG and Transformer-based language models.
 
 ---
 
