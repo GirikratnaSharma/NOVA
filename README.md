@@ -29,7 +29,7 @@ Think of it as **HAL 9000**, minus the existential threat.
 ```plaintext
 nova/
 ├── data/                  # Mission documents (e.g., NASA PDFs, checklists)
-├── embeddings/            # Vector index (FAISS or Chroma)
+├── embeddings/            # Vector index (FAISS)
 ├── nova/                 
 │   ├── assistant.py       # Main chat agent
 │   ├── rag_pipeline.py    # Retriever + Generator integration
@@ -68,4 +68,3 @@ Then ask questions like:
 > "How do I reboot the backup oxygen system?"
 > "What’s the last known log on the CO2 levels?"
 ```
-
