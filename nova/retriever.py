@@ -13,7 +13,7 @@ class Retriever:
         self.text_chunks = []
 
         if os.path.exists(self.index_path):
-            print("Loading existing FAISS index...")
+            print("\n Loading existing FAISS index...")
             self.load_index()
         else:
             print("Indexing documents for the first time...")
