@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2702643a-07ce-427b-98bd-f04ade59ea7d" name="Changes" comment="Small changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="2702643a-07ce-427b-98bd-f04ade59ea7d" name="Changes" comment="Changes to data and UI">
+      <change beforePath="$PROJECT_DIR$/nova/assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/nova/assistant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nova/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/nova/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nova/rag_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/nova/rag_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744775035427</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Changes to data and UI">
+      <option name="closed" value="true" />
+      <created>1744775612639</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1744775612639</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,6 +372,7 @@
     <MESSAGE value="Updated README.md file" />
     <MESSAGE value="Updated Model for performance" />
     <MESSAGE value="Small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
+    <MESSAGE value="Changes to data and UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to data and UI" />
   </component>
 </project>

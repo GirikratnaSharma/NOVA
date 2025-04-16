@@ -1,7 +1,7 @@
 # Local GGUF-based LLM engine
 llama-cpp-python>=0.2.11
 
-# Hugging Face + Transformers (for tokenizer support, if needed)
+# Hugging Face + Transformers (for tokenizer support)
 transformers>=4.39.0
 safetensors>=0.4.0
 

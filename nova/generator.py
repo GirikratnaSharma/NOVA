@@ -4,7 +4,6 @@ import os
 import sys
 from llama_cpp import Llama, llama_log_set
 
-# Disable internal logs
 llama_log_set(None, None)
 
 @contextlib.contextmanager
@@ -50,7 +49,6 @@ class Generator:
         response = {"role": "assistant", "content": raw_output}
         self.conversation.append(response)
 
-        # Clean artifacts
         cleaned = raw_output.split("Question:")[0].strip()
         if re.search(r"\b\d+\.$", cleaned):
             cleaned = re.sub(r"\b\d+\.$", "", cleaned).strip()

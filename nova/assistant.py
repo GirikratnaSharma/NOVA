@@ -1,4 +1,3 @@
-# nova/assistant.py
 from nova.rag_pipeline import RAGPipeline
 
 rag = RAGPipeline()
